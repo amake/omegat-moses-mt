@@ -31,22 +31,17 @@ mosesserver.
 Building
 ========
 
-1. You must supply a copy of `OmegaT.jar` in the `lib` folder. The easiest way
-   to do this is to download a recent "Without JRE" package from [SourceForge]
-   (https://sourceforge.net/projects/omegat/) and copy `OmegaT.jar` from the
-   top level.
+1. From the top level of the distribution run `mvn install`.
 
-2. From the top level of `omegat-moses-mt` run `mvn install`.
-
-3. From the `target` folder, copy `omegat-moses-mt-*.jar` and the `lib` folder
+2. From the `target` folder, copy `omegat-moses-mt-*.jar` and the `lib` folder
    to one of the OmegaT plugin folders.
 
 
 License
 =======
 
-This project is distributed under the [GNU Lesser General Public License, 
-v2.1](http://www.gnu.org/licenses/lgpl-2.1.html).
+This project is distributed under the [GNU General Public License, v3]
+(http://www.gnu.org/licenses/gpl-3.0.html).
 
 This project makes use of the following components:
 - DeNormalize.java (DeNormalize License)

@@ -22,13 +22,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>omegat</groupId>
-      <artifactId>OmegaT</artifactId>
-      <version>RELEASE</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/lib/OmegaT.jar</systemPath>
-    </dependency>
     <!-- XML-RCP dependencies -->
 	<dependency>
 		<groupId>org.apache.xmlrpc</groupId>
@@ -45,6 +38,11 @@
   </dependencies>
   
   <build>
+    <resources>
+      <resource>
+        <directory>src-stubs</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -86,7 +84,7 @@
               <overWriteReleases>false</overWriteReleases>
               <overWriteSnapshots>false</overWriteSnapshots>
               <overWriteIfNewer>true</overWriteIfNewer>
-              <excludeGroupIds>junit,omegat</excludeGroupIds>
+              <excludeGroupIds>junit</excludeGroupIds>
             </configuration>
           </execution>
         </executions>
