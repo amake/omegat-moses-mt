@@ -1,30 +1,33 @@
 Moses Connector for OmegaT
+==========================
 
 This is a plugin to allow OmegaT to source machine translations from [Moses]
 (http://www.statmt.org/moses/), an open-source statistical machine translation
 package.
 
-This plugin talks to mosesserver over XML-RPC.
+This plugin talks to `mosesserver` over XML-RPC.
 
 
 Usage
 =====
 
 In order to make use of this plugin, you must have access to an instance of
-mosesserver.
+`mosesserver`.
 
 1. Download the binary ZIP and extract its contents into one of the OmegaT
    plugins folders.
 
-2. Provide OmegaT with the URL for your mosesserver instance by adding the
+2. Provide OmegaT with the URL for your `mosesserver` instance by adding the
    following argument to your OmegaT launch script:
    
-    -Dmoses.server.url=http://your.moses.instance
+   ```
+   -Dmoses.server.url=http://your.moses.instance
+   ```
 
-   If you are running mosesserver locally, the address will probably be
+   If you are running `mosesserver` locally, the address will probably be
    `http://localhost:8080/RPC2`.
 
-3. In OmegaT, enable Options > Machine Translate > Moses. Translations will
+3. In OmegaT, enable **Options > Machine Translate > Moses**. Translations will
    appear in the Machine Translation pane.
 
 
