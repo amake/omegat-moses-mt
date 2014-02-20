@@ -1,4 +1,4 @@
-package org.omegat.core.machinetranslators;
+package org.madlonkay.machinetranslators;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

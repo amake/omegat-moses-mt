@@ -38,17 +38,34 @@
   </dependencies>
   
   <build>
-    <resources>
-      <resource>
-        <directory>src-stubs</directory>
-      </resource>
-    </resources>
     <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src-stubs</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.4</version>
         <configuration>
+          <excludes>
+            <exclude>**/org/omegat/**</exclude>
+          </excludes>
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
@@ -59,7 +76,7 @@
             </manifestEntries>
             <manifestSections>
               <manifestSection>
-                <name>org.omegat.core.machinetranslators.MosesTranslate</name>
+                <name>org.madlonkay.machinetranslators.MosesTranslate</name>
                 <manifestEntries>
 			      <OmegaT-Plugin>MachineTranslator</OmegaT-Plugin>
 			    </manifestEntries>
@@ -111,6 +128,21 @@
     								<versionRange>[0,)</versionRange>
     								<goals>
     									<goal>copy-dependencies</goal>
+    								</goals>
+    							</pluginExecutionFilter>
+    							<action>
+    								<ignore></ignore>
+    							</action>
+    						</pluginExecution>
+    						<pluginExecution>
+    							<pluginExecutionFilter>
+    								<groupId>org.codehaus.mojo</groupId>
+    								<artifactId>
+    									build-helper-maven-plugin
+    								</artifactId>
+    								<versionRange>[0,)</versionRange>
+    								<goals>
+    									<goal>add-source</goal>
     								</goals>
     							</pluginExecutionFilter>
     							<action>

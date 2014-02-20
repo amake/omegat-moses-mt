@@ -30,7 +30,7 @@ of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of Johns Hopkins University.
 */
 
-package org.omegat.core.machinetranslators;
+package org.madlonkay.machinetranslators;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.omegat.core.machinetranslators;
+package org.madlonkay.machinetranslators;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -28,6 +28,7 @@ import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.omegat.core.Core;
+import org.omegat.core.machinetranslators.BaseTranslate;
 import org.omegat.tokenizer.ITokenizer;
 import org.omegat.util.Language;
 import org.omegat.util.Token;
