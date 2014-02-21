@@ -52,4 +52,12 @@ This project makes use of the following components:
 - Jericho HTML Parser (LGPL-2.1)
 
 
+Miscellaneous
+=============
+
+If you are looking to set up your own instance of Moses and want to create
+a parallel corpus from TMX files, look at [TMX2Corpus.py]
+(https://gist.github.com/amake/9128457).
+
+
 Copyright 2014 Aaron Madlon-Kay <aaron@madlon-kay.com>
