@@ -87,7 +87,7 @@ public class MosesTranslate extends BaseTranslate {
     private String mosesPreprocess(String text, Locale locale) {
         ITokenizer tokenizer = Core.getProject().getSourceTokenizer();
         StringBuilder sb = new StringBuilder();
-        for (Token t : tokenizer.tokenizeAllExactly(text)) {
+        for (Token t : tokenizer.tokenizeVerbatim(text)) {
             sb.append(t.getTextFromString(text));
             sb.append(" ");
         }
