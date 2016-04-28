@@ -1,7 +1,5 @@
 package org.omegat.tokenizer;
 
-import org.omegat.util.Token;
-
 public interface ITokenizer {
-    public Token[] tokenizeVerbatim(String string);
+    public String[] tokenizeVerbatimToStrings(String string);
 }

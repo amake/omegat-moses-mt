@@ -29,7 +29,6 @@ import org.omegat.core.Core;
 import org.omegat.core.machinetranslators.BaseTranslate;
 import org.omegat.tokenizer.ITokenizer;
 import org.omegat.util.Language;
-import org.omegat.util.Token;
 
 import net.htmlparser.jericho.CharacterReference;
 
@@ -84,8 +83,8 @@ public class MosesTranslate extends BaseTranslate {
     private String mosesPreprocess(String text, Locale locale) {
         ITokenizer tokenizer = Core.getProject().getSourceTokenizer();
         StringBuilder sb = new StringBuilder();
-        for (Token t : tokenizer.tokenizeVerbatim(text)) {
-            sb.append(t.getTextFromString(text));
+        for (String t : tokenizer.tokenizeVerbatimToStrings(text)) {
+            sb.append(t);
             sb.append(" ");
         }
         String result = sb.toString();
