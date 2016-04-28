@@ -22,8 +22,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import net.htmlparser.jericho.CharacterReference;
-
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
@@ -32,6 +30,8 @@ import org.omegat.core.machinetranslators.BaseTranslate;
 import org.omegat.tokenizer.ITokenizer;
 import org.omegat.util.Language;
 import org.omegat.util.Token;
+
+import net.htmlparser.jericho.CharacterReference;
 
 /**
  * Support for Moses Server
@@ -66,8 +66,6 @@ public class MosesTranslate extends BaseTranslate {
         config.setServerURL(new URL(server));
         client.setConfig(config);
         
-        mosesParams.put("align", "true");
-        mosesParams.put("report-all-factors", "true");
         mosesParams.put("text", mosesPreprocess(text, sLang.getLocale()));
         
         Object[] xmlRpcParams = new Object[] { mosesParams };
@@ -80,7 +78,6 @@ public class MosesTranslate extends BaseTranslate {
 	    } catch (XmlRpcException e) {
             return e.getLocalizedMessage();
         }
-
         return mosesPostprocess(result, tLang);
     }
     
@@ -99,9 +96,7 @@ public class MosesTranslate extends BaseTranslate {
         String result = CharacterReference.decode(text);
         
         result = DeNormalize.processSingleLine(result).replaceAll("\\s+", " ").trim();
-        
-        result = result.replaceAll("(\\|UNK)+", "");
-        
+
         if (!targetLanguage.isSpaceDelimited()) {
             result = result.replaceAll("(?<=[\u3001-\u9fa0])\\s+(?=[\u3001-\u9fa0])", "");
         }
