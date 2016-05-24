@@ -71,8 +71,7 @@ public class MosesTranslate extends BaseTranslate {
 
         String result;  
         try {
-            @SuppressWarnings("rawtypes")
-            HashMap response = (HashMap) client.execute("translate", xmlRpcParams);
+            HashMap<?, ?> response = (HashMap<?, ?>) client.execute("translate", xmlRpcParams);
             result = (String) response.get("text");
 	    } catch (XmlRpcException e) {
             return e.getLocalizedMessage();
