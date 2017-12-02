@@ -14,8 +14,8 @@ Usage
 In order to make use of this plugin, you must have access to an instance of
 `mosesserver`.
 
-1. Download the binary ZIP and extract its contents into one of the OmegaT
-   plugins folders.
+1. Download the JAR from [releases](https://github.com/amake/omegat-moses-mt/releases)
+   and place it into one of the OmegaT plugins folders.
 
 2. Provide OmegaT with the URL for your `mosesserver` instance by adding the
    following argument to your OmegaT launch script:
@@ -36,7 +36,7 @@ Building
 
 1. From the top level of the distribution run `mvn install`.
 
-2. From the `target` folder, copy `omegat-moses-mt-*.jar` and the `lib` folder
+2. From the `target` folder, copy `omegat-moses-mt-*-jar-with-dependencies.jar`
    to one of the OmegaT plugin folders.
 
 
