@@ -7,6 +7,9 @@ translation package.
 
 This plugin talks to `mosesserver` over XML-RPC.
 
+**The functionality provided by this plugin is built into OmegaT 4.1.3u2 and
+later. Please uninstall the plugin if you are using this version or later.**
+
 
 Usage
 =====
